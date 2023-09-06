@@ -1,0 +1,298 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+.flexAlignCenter {
+    align-items: center;
+}
+
+.wdth100 {
+    width: 100%;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+.mg20 {
+    margin: 20px;
+}
+
+.flexDirColumn {
+    flex-direction: column;
+}
+
+.twoCols div {
+    width: 50%;
+}
+
+.flexJustCenter {
+    justify-content: center;
+}
+
+.flexJustStart {
+    justify-content: flex-start;
+}
+
+.flexJustEnd {
+    justify-content: flex-end;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.error {
+    color: red;
+}
+
+h1 {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.container {
+    display: flex;
+}
+
+.popupRow label {
+    margin-bottom: 10px;
+}
+
+.postRow img {
+    width: 20px;
+}
+
+.popupHeading {
+    font-size: 33px;
+    text-align: center;
+    margin: 0px;
+    font-family: 'Lato';
+    font-weight: 600;
+}
+
+.blackBorderButton {
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 10px 25px;
+    background: white;
+    font-weight: 400;
+    border: 1px solid black;
+    color: black;
+    font-family: 'Lato';
+    font-size: 14px;
+}
+
+.cancelButton {
+    background: transparent;
+    padding: 10px;
+    color: red;
+    border-color: red;
+    border-radius: 4px;
+}
+
+.blackButton {
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 10px 25px;
+    padding: 20px;
+    border-radius: 100px;
+    font-weight: 400;
+    background: black;
+    color: white;
+    border: 0px;
+    font-family: 'Lato';
+    font-size: 14px;
+}
+
+.greenButton {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px 25px;
+    font-weight: 600;
+    background: linear-gradient(to bottom, #308356 0%, #62C778 100%);
+    color: white;
+    border: 0px;
+    font-family: 'Lato';
+    font-size: 14px;
+}
+
+.popupBorderedRow {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.popupContent {
+    width: 100%;
+}
+
+.popupContent label {
+    font-size: 15px;
+    font-family: "Lato";
+    font-weight: 400;
+}
+
+.popupBorderedRow input, .popupRow input, .popupRow textarea {
+    padding: 10px 5px;
+    border-radius: 2px;
+    background: #f8f8f8;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #efefef;
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    width: 80%;
+    max-width: 600px;
+    padding: 40px;
+
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.popupActions {
+    display: flex;
+    gap: 10px;
+}
+
+.postsTable {
+    background: white;
+    padding: 25px;
+    border: 1px solid #f1f1f1;
+}
+
+.postsArea {
+    width: 100%;
+    gap: 10px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.postsTable .col {
+    font-family: 'Lato';
+    font-style: normal;
+    padding: 5px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.postsTable .col.author, .postsTable .col.title {
+    width: 25%;
+}
+
+.postsTable .col.description {
+    width: 45%;
+}
+
+.postRow {
+    padding: 15px;
+    background: #efefef;
+}
+
+.postsTable .postRow {
+    border: 1px solid #e5dddd;
+    border-radius: 2px;
+    margin: 5px 0px;
+}
+
+.postsTable .postCol {
+    width: 25%;
+}
+
+.postsTableHeadings {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.postsTable .optionsCol {
+    width: 5%;
+}
+
+.postDropdownMenu {
+    position: absolute;
+    margin-top: 60px;
+    right: 0;
+    border-radius: 4px;
+    background: white;
+    padding: 5px;
+    box-shadow: 0px 0px 2px #D4CDBB;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.optionsCol:hover .postDropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdownMenu .menuItem img {
+    width: 16px;
+}
+
+.menuItem {
+    display: flex;
+    font-size: 16px;
+    padding: 5px 10px;
+    gap: 7px;
+    cursor: pointer;
+    background: white;
+}
+
+.adminHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background: white;
+    filter: drop-shadow(0px 2px 4px rgba(185, 185, 185, 0.25));
+}
+
+body {
+    background: #fff;
+}
