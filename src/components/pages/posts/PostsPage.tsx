@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PostsList from "./PostsList";
-import AddBookingPost from './AddPostButton';
+import AddPostButton from './AddPostButton';
 import PostPopup from './PostPopup';
 import { PostType } from "interfaces/posts/PostType";
 import { useSelector } from "react-redux";
@@ -37,7 +37,7 @@ const PostsPage: React.FC = () => {
     <div>
       <div className="container adminPanelContainer">
         <div className="postsArea flexDirColumn container">
-          <AddBookingPost onClick={ () => {
+          <AddPostButton onClick={ () => {
             setIsEditing(false);
             setIsPopupVisible(true);
           } }/>

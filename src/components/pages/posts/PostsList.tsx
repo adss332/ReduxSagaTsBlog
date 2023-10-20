@@ -23,14 +23,12 @@ const PostsList: React.FC<PostsTableProps> = ({ setSelectedPost, setIsPopupVisib
     dispatch(fetchPostsRequest());
   }, [ dispatch ]);
 
-  console.log(posts);
-
   return (
     <div className="wdth100">
       <div className="container postsTable flexDirColumn">
         { posts.map((offer, index) => (
           <PostCard
-            key={ index } // Добавим key, чтобы React мог эффективно отслеживать список
+            key={ index }
             post={ offer }
             openPopupWithPost={ (post) => {
               setSelectedPost(post);

@@ -6,7 +6,6 @@ import PostsPage from './components/pages/posts/PostsPage';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App: React.FC = () => {
-
   return (
     <Router>
       <Routes>

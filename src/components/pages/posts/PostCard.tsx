@@ -1,5 +1,6 @@
 import React from 'react';
 import { PostType } from "interfaces/posts/PostType";
+import { truncateString } from "helpers/someHelpers";
 
 interface PostRowProps {
   post: PostType;
@@ -13,14 +14,6 @@ const PostCard: React.FC<PostRowProps> = (
     openPopupWithPost,
     onDeletePost
   }) => {
-
-  const truncateString = (description: string, maxLength: number = 80): string => {
-    if (description.length <= maxLength) {
-      return description;
-    }
-
-    return `${ description.substring(0, maxLength) }...`;
-  }
 
   return (
     <div className={ "container postRow flexAlignCenter" }>

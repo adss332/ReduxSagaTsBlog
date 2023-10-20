@@ -31,7 +31,7 @@ import {
 } from "consts/posts/PostsConsts";
 
 
-function* updatePostHandler(action: Action<typeof UPDATE_POST_REQUEST> & UpdatePostRequestActionInterface): Generator {
+function* updatePostWorker(action: Action<typeof UPDATE_POST_REQUEST> & UpdatePostRequestActionInterface): Generator {
   try {
     const data = action.payload;
     const response = (yield call(updatePostRequest, data)) as UpdatePostSuccessResponseInterface;
@@ -42,7 +42,7 @@ function* updatePostHandler(action: Action<typeof UPDATE_POST_REQUEST> & UpdateP
   }
 }
 
-function* createPostHandler(action: Action<typeof CREATE_POST_REQUEST> & CreatePostRequestActionInterface): Generator {
+function* createPostWorker(action: Action<typeof CREATE_POST_REQUEST> & CreatePostRequestActionInterface): Generator {
   try {
     const data = action.payload;
     const response = (yield call(createPostRequest, data)) as CreatePostSuccessResponseInterface;
@@ -53,7 +53,7 @@ function* createPostHandler(action: Action<typeof CREATE_POST_REQUEST> & CreateP
   }
 }
 
-function* deletePostHandler(action: Action<typeof DELETE_POST_REQUEST> & DeletePostRequestActionInterface): Generator {
+function* deletePostWorker(action: Action<typeof DELETE_POST_REQUEST> & DeletePostRequestActionInterface): Generator {
   try {
     const { id } = action.payload;
     const response = (yield call(deletePostRequest, id)) as {};
@@ -64,7 +64,7 @@ function* deletePostHandler(action: Action<typeof DELETE_POST_REQUEST> & DeleteP
   }
 }
 
-function* fetchPostsHandler(action: Action<typeof FETCH_POSTS_REQUEST> & FetchPostsRequestActionInterface): Generator {
+function* fetchPostsWorker(action: Action<typeof FETCH_POSTS_REQUEST> & FetchPostsRequestActionInterface): Generator {
   try {
     const response = (yield call(getPostsRequest)) as FetchPostsSuccessResponseInterface;
     yield put(fetchPostsSuccess(response));
@@ -73,9 +73,9 @@ function* fetchPostsHandler(action: Action<typeof FETCH_POSTS_REQUEST> & FetchPo
   }
 }
 
-export function* postsSaga(): Generator {
-  yield takeLatest(FETCH_POSTS_REQUEST, fetchPostsHandler);
-  yield takeLatest(DELETE_POST_REQUEST, deletePostHandler);
-  yield takeLatest(CREATE_POST_REQUEST, createPostHandler);
-  yield takeLatest(UPDATE_POST_REQUEST, updatePostHandler);
+export function* postsSagaWatcher(): Generator {
+  yield takeLatest(FETCH_POSTS_REQUEST, fetchPostsWorker);
+  yield takeLatest(DELETE_POST_REQUEST, deletePostWorker);
+  yield takeLatest(CREATE_POST_REQUEST, createPostWorker);
+  yield takeLatest(UPDATE_POST_REQUEST, updatePostWorker);
 }

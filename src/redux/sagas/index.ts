@@ -1,8 +1,8 @@
 import { all, fork } from 'redux-saga/effects';
-import { postsSaga } from './postsSaga';
+import { postsSagaWatcher } from './postsSaga';
 
 function* rootSaga() {
-  yield all([ fork(postsSaga) ]);
+  yield all([ fork(postsSagaWatcher) ]);
 }
 
 export default rootSaga;
